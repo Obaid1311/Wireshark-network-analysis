@@ -1,1 +1,59 @@
+Wireshark Network Traffic Analysis - SOC Notes
 
+Analyst: Mohammed Obaid Ur Rahman
+Date: 10-04-2026
+
+Objective:
+To analyze captured network traffic using Wireshark and identify protocols, communication behavior, and potential security risks.
+
+Filters Used:
+- dns
+- http
+- tcp
+
+Observations:
+
+1. DNS Traffic:
+- DNS queries observed for domains:
+  • www.youtube.com
+  • googlevideo.com
+- Multiple IP addresses returned in responses (CDN/load balancing behavior)
+- CNAME records redirecting to Google infrastructure
+- No suspicious or unknown domains detected
+
+2. HTTP Traffic:
+- HTTP GET requests captured for file/stream data
+- Response status: "206 Partial Content"
+- Indicates streaming or partial download activity
+- Traffic is unencrypted (HTTP)
+
+3. TCP Analysis:
+- TCP flags observed:
+  • ACK
+  • PSH, ACK
+- Normal TCP session establishment and communication
+- Continuous packet flow between client and server
+- No retransmissions or abnormal behavior observed
+
+4. Packet Details:
+- Packet size approximately ~1500 bytes (standard MTU)
+- TCP stream reassembly shows segmented data transfer
+- No fragmentation or malformed packets detected
+
+Security Findings:
+
+- Unencrypted HTTP traffic detected (Medium Risk)
+- External communication with CDN/Google servers (Expected behavior)
+- No indicators of compromise (IOCs) identified
+- No suspicious traffic patterns observed
+
+Conclusion:
+
+The analyzed traffic represents normal user activity such as web browsing and video streaming. All observed domains and connections are legitimate, and no malicious activity was detected.
+
+Recommendations:
+
+- Use HTTPS instead of HTTP for secure communication
+- Monitor DNS queries for suspicious domains
+- Implement IDS/IPS for network monitoring
+- Use threat intelligence feeds for domain validation
