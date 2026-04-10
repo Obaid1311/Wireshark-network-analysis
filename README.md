@@ -64,35 +64,35 @@ Screenshots:
 
 DNS Analysis:
 
-"DNS" (screenshots/dns.png)
+"DNS" (02_screenshots/dns.png)
 
 Overview:
 
-"Overview" (screenshots/overview.png)
+"Overview" (02_screenshots/overview.png)
 
 TCP Analysis:
 
-"TCP" (screenshots/tcp.png)
+"TCP" (02_screenshots/tcp.png)
 
 HTTP Analysis:
 
-"HTTP" (screenshots/http.png)
+"HTTP" (02_screenshots/http.png)
 
 Project Structure:
 
 wireshark-network-analysis/
 │
 ├── README.md
-├── pcap/
+├── 01_pcap/
 │   └── capture.pcapng
-├── screenshots/
+├── 02_screenshots/
 │   ├── dns.png
 │   ├── overview.png
 │   ├── tcp.png
 │   └── http.png
-├── report/
+├── 03_report/
 │   └── soc_analysis_report.pdf
-└── notes/
+└── 04_notes/
 └── analysis.txt
 
 Skills Demonstrated:
